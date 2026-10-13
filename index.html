@@ -1,0 +1,282 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Origin Research Journal — peer-reviewed research by high school students</title>
+<meta name="description" content="A peer-reviewed journal for high school research. Free to submit; a $100 fee applies only if your paper is accepted. Decisions in about two weeks.">
+<meta property="og:title" content="Origin Research Journal">
+<meta property="og:description" content="A peer-reviewed journal for high school research. Free to submit; $100 only on acceptance; decisions in about two weeks.">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📄</text></svg>">
+<style>
+:root{
+  --bg:#ffffff; --bg-alt:#f6f8fa; --card:#ffffff;
+  --ink:#11161d; --body:#3c4654; --muted:#6a7482;
+  --accent:#1a4f8a; --accent-ink:#123a66; --accent-soft:#e9f0f8;
+  --line:#e3e7ec; --radius:10px;
+  --serif:"Iowan Old Style",Georgia,"Times New Roman",serif;
+  --sans:system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --bg:#11151a; --bg-alt:#161b22; --card:#171d25;
+    --ink:#f2f5f8; --body:#c3ccd6; --muted:#94a0ad;
+    --accent:#6ba5e7; --accent-ink:#9cc4f0; --accent-soft:#17283d;
+    --line:#262e38;
+  }
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0; background:var(--bg); color:var(--body);
+  font-family:var(--sans); font-size:17px; line-height:1.65;
+  -webkit-font-smoothing:antialiased;
+}
+.wrap{max-width:860px; margin:0 auto; padding:0 16px}
+h1,h2,h3{font-family:var(--serif); color:var(--ink); line-height:1.2; margin:0 0 .4em}
+h1{font-size:clamp(2rem,6vw,3.1rem); letter-spacing:-.015em}
+h2{font-size:clamp(1.45rem,3.6vw,1.95rem); margin-top:0}
+h3{font-size:1.07rem; font-family:var(--sans); font-weight:650; margin:0 0 .3em}
+p{margin:0 0 1em}
+a{color:var(--accent); text-underline-offset:3px}
+a:hover{color:var(--accent-ink)}
+.skip{position:absolute;left:-9999px}
+.skip:focus{left:8px;top:8px;background:var(--card);padding:10px 14px;border-radius:8px;z-index:99}
+
+header.site{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--bg) 88%,transparent);
+  backdrop-filter:saturate(150%) blur(8px); border-bottom:1px solid var(--line)}
+.bar{display:flex;align-items:center;gap:18px;justify-content:space-between;
+  max-width:860px;margin:0 auto;padding:11px 16px}
+.mark{font-family:var(--serif);font-weight:600;color:var(--ink);font-size:1.02rem;
+  text-decoration:none;letter-spacing:-.01em;white-space:nowrap}
+nav.site{display:flex;gap:17px;flex-wrap:wrap}
+nav.site a{color:var(--muted);text-decoration:none;font-size:.88rem}
+nav.site a:hover{color:var(--accent)}
+@media (max-width:640px){nav.site{display:none}}
+
+.hero{padding:76px 0 52px;border-bottom:1px solid var(--line)}
+.eyebrow{font-size:.79rem;letter-spacing:.09em;text-transform:uppercase;color:var(--accent);
+  font-weight:650;margin:0 0 14px}
+.lede{font-size:clamp(1.05rem,2.3vw,1.21rem);color:var(--body);max-width:60ch;margin:0 0 28px}
+.cta{display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+.btn{display:inline-block;background:var(--accent);color:#fff;text-decoration:none;
+  padding:12px 22px;border-radius:var(--radius);font-weight:600;font-size:.96rem}
+.btn:hover{background:var(--accent-ink);color:#fff}
+.btn.ghost{background:transparent;color:var(--accent);border:1px solid var(--line)}
+.btn.ghost:hover{border-color:var(--accent);background:var(--accent-soft)}
+
+section{padding:56px 0;border-bottom:1px solid var(--line)}
+section:last-of-type{border-bottom:0}
+.sub{color:var(--muted);max-width:62ch;margin:-.2em 0 1.8em}
+
+.grid{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(196px,1fr))}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:20px}
+.card p{margin:0;font-size:.93rem;color:var(--muted)}
+.card p.stat{font-family:var(--serif);font-size:1.8rem;color:var(--ink);
+  line-height:1.1;margin:0 0 7px;letter-spacing:-.01em}
+
+ol.steps{list-style:none;counter-reset:s;margin:0;padding:0}
+ol.steps li{counter-increment:s;position:relative;padding:0 0 22px 50px;margin:0}
+ol.steps li::before{content:counter(s);position:absolute;left:0;top:-2px;width:32px;height:32px;
+  border-radius:50%;background:var(--accent-soft);color:var(--accent);
+  display:grid;place-items:center;font-weight:700;font-size:.9rem;font-variant-numeric:tabular-nums}
+ol.steps li:not(:last-child)::after{content:"";position:absolute;left:15.5px;top:36px;bottom:2px;
+  width:1px;background:var(--line)}
+ol.steps p{margin:0;font-size:.95rem;color:var(--muted)}
+
+.pol{border-top:1px solid var(--line);padding:17px 0}
+.pol:first-of-type{border-top:0}
+.pol p{margin:0;font-size:.95rem;color:var(--muted)}
+
+ul.ticks{list-style:none;padding:0;margin:0 0 1em}
+ul.ticks li{position:relative;padding-left:25px;margin-bottom:7px;font-size:.96rem}
+ul.ticks li::before{content:"";position:absolute;left:4px;top:.56em;width:7px;height:7px;
+  border-radius:50%;background:var(--accent)}
+
+.panel{background:var(--bg-alt);border:1px solid var(--line);border-radius:var(--radius);padding:24px}
+.mailto{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:1.02rem;
+  word-break:break-all;font-weight:600}
+.note{font-size:.87rem;color:var(--muted);border-left:2px solid var(--line);padding-left:14px;margin:1.2em 0 0}
+
+footer{padding:34px 0 48px;color:var(--muted);font-size:.87rem}
+footer a{color:var(--muted)}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="site">
+  <div class="bar">
+    <a class="mark" href="#top">Origin Research Journal</a>
+    <nav class="site">
+      <a href="#glance">At a glance</a>
+      <a href="#how">How it works</a>
+      <a href="#publish">What we publish</a>
+      <a href="#policies">Policies</a>
+      <a href="#submit">Submit</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+<div id="top" class="hero">
+  <div class="wrap">
+    <p class="eyebrow">Peer-reviewed · open to high school researchers</p>
+    <h1>Research by high school students, reviewed properly.</h1>
+    <p class="lede">Origin Research Journal publishes original research by secondary school
+      students across the sciences, social sciences and humanities. Submission is free,
+      review is genuine, and you hear back in about two weeks.</p>
+    <div class="cta">
+      <a class="btn" href="#submit">Submit your paper</a>
+      <a class="btn ghost" href="#how">How review works</a>
+    </div>
+  </div>
+</div>
+
+<section id="glance">
+  <div class="wrap">
+    <h2>At a glance</h2>
+    <p class="sub">What it costs and how long it takes, stated plainly.</p>
+    <div class="grid">
+      <div class="card"><p class="stat">Free</p><p>to submit. No submission fee and no charge for review.</p></div>
+      <div class="card"><p class="stat">$100</p><p>publication fee, charged <strong>only if your paper is accepted</strong>.</p></div>
+      <div class="card"><p class="stat">~2 weeks</p><p>to a decision for most submissions.</p></div>
+      <div class="card"><p class="stat">No fast-track</p><p>fees. Review speed is not for sale; papers are handled in turn.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="how">
+  <div class="wrap">
+    <h2>How it works</h2>
+    <p class="sub">Five steps from submission to publication.</p>
+    <ol class="steps">
+      <li><h3>Submit by email</h3><p>Send your manuscript to the address below. There is no
+        account to create and no platform to learn.</p></li>
+      <li><h3>Editorial screening</h3><p>We check that the paper is in scope, complete and
+        original. Submissions outside our scope are returned quickly so you can place them elsewhere.</p></li>
+      <li><h3>Peer review</h3><p>Your paper is read by reviewers with background in the subject.
+        They assess the research question, whether the method answers it, whether the evidence
+        supports the claims, and whether the writing is clear.</p></li>
+      <li><h3>Decision</h3><p>Accept, revise and resubmit, or decline — with written comments in
+        every case. Most authors hear back within about two weeks.</p></li>
+      <li><h3>Revision and publication</h3><p>If revisions are requested you respond to the
+        comments point by point. On acceptance the $100 publication fee applies, and the paper
+        is copy-edited and published.</p></li>
+    </ol>
+  </div>
+</section>
+
+<section id="publish">
+  <div class="wrap">
+    <h2>What we publish</h2>
+    <p class="sub">Original work with a question the author set out to answer.</p>
+    <div class="grid" style="grid-template-columns:repeat(auto-fit,minmax(248px,1fr))">
+      <div class="card">
+        <h3>Fields</h3>
+        <ul class="ticks">
+          <li>Natural and life sciences</li>
+          <li>Mathematics and computer science</li>
+          <li>Engineering and applied sciences</li>
+          <li>Social sciences and economics</li>
+          <li>Humanities</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Formats</h3>
+        <ul class="ticks">
+          <li>Original research articles</li>
+          <li>Replication studies</li>
+          <li>Systematic and literature reviews</li>
+          <li>Data and methods notes</li>
+        </ul>
+      </div>
+    </div>
+    <h3 style="margin-top:28px">What reviewers look for</h3>
+    <p>A question stated clearly enough to be answered; a method suited to that question;
+      evidence a reader can check; and limitations the author names rather than hides. A
+      negative or inconclusive result is publishable if the work behind it is sound.</p>
+    <h3>What we do not publish</h3>
+    <p>Work without a research question; manuscripts under review at another journal; writing
+      generated by an AI system and presented as the author's own; and work that cannot be
+      described in enough detail for a reader to evaluate it.</p>
+  </div>
+</section>
+
+<section id="policies">
+  <div class="wrap">
+    <h2>Editorial policies</h2>
+    <p class="sub">The rules we hold submissions to, and hold ourselves to.</p>
+
+    <div class="pol"><h3>Peer review</h3><p>Every paper that passes editorial screening is read
+      by reviewers with subject background. Reviewers do not see papers they have a personal or
+      mentoring connection to. Authors receive the substance of the reviews with the decision.</p></div>
+
+    <div class="pol"><h3>Authorship</h3><p>The student who carried out the work is the author.
+      Teachers, mentors and supervisors are named in an acknowledgements section unless they
+      contributed enough to the research itself to warrant co-authorship. Everyone listed as an
+      author must have agreed to the submission.</p></div>
+
+    <div class="pol"><h3>Originality</h3><p>Submissions must be the author's own work, not
+      previously published, and not under review elsewhere. Sources must be cited. Manuscripts
+      are screened for copied text, and suspected plagiarism ends consideration.</p></div>
+
+    <div class="pol"><h3>Use of AI tools</h3><p>AI tools may be used for language editing and
+      must be disclosed in the submission. AI systems cannot be listed as authors. Text, data or
+      analysis generated by an AI system and presented as the author's own is grounds for
+      rejection, and for retraction if discovered after publication.</p></div>
+
+    <div class="pol"><h3>Data and materials</h3><p>Authors should be able to supply the data,
+      code or materials behind their results on reasonable request. Human-subjects research must
+      describe how consent was obtained.</p></div>
+
+    <div class="pol"><h3>Corrections and retractions</h3><p>Errors found after publication are
+      corrected in a dated note attached to the paper. Work found to be fabricated, plagiarised
+      or seriously flawed is retracted, with the reason stated.</p></div>
+
+    <div class="pol"><h3>Withdrawal</h3><p>You may withdraw a submission at any point before
+      publication at no cost.</p></div>
+
+    <div class="pol"><h3>Fees</h3><p>One fee: $100, on acceptance. Submission and review are
+      free, and there is no charge to withdraw or to resubmit after revision. We do not offer
+      paid fast-track review, and paying does not influence a decision — the fee is charged only
+      after a paper has already been accepted on its merits.</p></div>
+  </div>
+</section>
+
+<section id="submit">
+  <div class="wrap">
+    <h2>Submit your paper</h2>
+    <p class="sub">By email. No account, no portal.</p>
+    <div class="panel">
+      <p style="margin-bottom:6px;color:var(--muted);font-size:.9rem">Send your submission to</p>
+      <p class="mailto"><a href="mailto:originresearchjournal@gmail.com?subject=Submission%20%E2%80%94%20">originresearchjournal@gmail.com</a></p>
+      <p style="margin:14px 0 8px"><strong>Use the subject line</strong>
+        <code>Submission — [your paper's title]</code></p>
+      <p style="margin-bottom:8px"><strong>Attach the manuscript</strong> as a PDF or Word file,
+        and include in the body of the email:</p>
+      <ul class="ticks">
+        <li>An abstract of 150–250 words</li>
+        <li>Your name, school, year group and email address</li>
+        <li>The name of a mentor or supervisor, if you had one, and what they contributed</li>
+        <li>A sentence confirming the work is original and not under review elsewhere</li>
+        <li>A sentence describing any use of AI tools, or stating that none were used</li>
+      </ul>
+      <p class="note">We acknowledge every submission. If you have not heard from us within
+        three days, the email did not arrive — please send it again.</p>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p style="margin-bottom:6px"><strong style="color:var(--ink)">Origin Research Journal</strong>
+      — peer-reviewed research by high school students.</p>
+    <p style="margin:0">Questions and submissions:
+      <a href="mailto:originresearchjournal@gmail.com">originresearchjournal@gmail.com</a></p>
+  </div>
+</footer>
+</body>
+</html>
